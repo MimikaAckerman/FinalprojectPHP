@@ -1,7 +1,6 @@
 <?php
 
-require_once MODELS . 'models/LoginModel.php';
-//Recive las peticiones y decidira a que metodo llamar del LoginModel.php
+require_once MODELS . "loginModel.php";
 
 $action = "";
 
@@ -15,20 +14,73 @@ if (function_exists($action)) {
     error("Invalid user action");
 }
 
-//CONTROLLER FUNCTIONS
+/* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
-function getAllNotes()
+function getAllEmployees()
 {
-    $notes = get();
-    if (isset($notes)){
+    $employees = get();
+    if (isset($employees)) {
         require_once VIEWS . "";
     } else {
         error("There is a database error, try again.");
     }
 }
 
-?>
-//Recive las peticiones y decidira a que metodo llamar del LoginModel.php
+function getEmployee($request)
+{
+    $action = $request["action"];
+    $employee = null;
+    if (isset($request["id"])) {
+        $employee = getById($request["id"]);
+    }
+    require_once VIEWS . "";
+}
 
-$_POST['email'];
-$_POST['pass'];
+function createEmployee($request)
+{
+    $action = $request["action"];
+    if (sizeof($_POST) > 0) {
+        $employee = create($_POST);
+
+        if ($employee[0]) {
+            header("");
+        } else {
+            echo $employee[1];
+        }
+    } else {
+        require_once VIEWS . "/employee/employee.php";
+    }
+}
+
+function updateEmployee($request)
+{
+    $action = $request["action"];
+    if (sizeof($_POST) > 0) {
+        $employee = update($_POST);
+
+        if ($employee[0]) {
+            header("Location: ");
+        } else {
+            $employee = $_POST;
+            $error = "The data entered is incorrect, check that there is no other employee with that email.";
+            require_once VIEWS . "";
+        }
+    } else {
+        require_once VIEWS . "";
+    }
+}
+
+function deleteEmployee($request)
+{
+    $action = $request["action"];
+    $employee = null;
+    if (isset($request["id"])) {
+        $employee = delete($request["id"]);
+        header("");
+    }
+}
+
+function error($errorMsg)
+{
+    require_once VIEWS . "/error/error.php";
+}
