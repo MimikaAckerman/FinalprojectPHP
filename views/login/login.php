@@ -27,9 +27,7 @@
 					</div>
 
                     <!--PAGE PHP -->
-                    <?php
-                    require('./src/library/loginManager.php');
-                    ?>
+
 
 					<div class="row">
 						<form id="form" method="post">
