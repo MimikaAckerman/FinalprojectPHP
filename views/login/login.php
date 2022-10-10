@@ -32,7 +32,7 @@
 					<div class="row">
 						<form id="form" method="post">
 							<div class="row">
-								<input type="text" name="user" id="username" class="form__input" placeholder="Enter your username...">
+								<input type="text" name="email" id="username" class="form__input" placeholder="Enter your email...">
 							</div>
 							<div class="row">
 								<!-- <span class="fa fa-lock"></span> -->

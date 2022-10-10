@@ -1,4 +1,5 @@
 <?php
+
 require_once MODELS . 'models/LoginModel.php';
 //Recive las peticiones y decidira a que metodo llamar del LoginModel.php
 
@@ -27,3 +28,7 @@ function getAllNotes()
 }
 
 ?>
+//Recive las peticiones y decidira a que metodo llamar del LoginModel.php
+
+$_POST['email'];
+$_POST['pass'];
