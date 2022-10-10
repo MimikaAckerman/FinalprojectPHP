@@ -29,7 +29,7 @@ VALUES
 ("Audi", "RS6", 1984, 2022),
 ("Honda", "S2000", 1994, 2000);
 
-INSERT INTO Users (/`name/`, last_name ,email, /`password/`)
+INSERT INTO Users (`name`, last_name ,email, `password`)
 VALUES
 ("Toyota", "YarisGR", "8573L@ll.com", 2022),
 ("Ford", "FocusRS", "9387J@kk.com", 2017);

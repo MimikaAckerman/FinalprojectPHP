@@ -1,37 +1,16 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-echo "helloworl";
-
-/* 
-
-<div class="row">
-	<div class="col-md-12 text-right">
-		<a href="index.php?controller=note&action=edit" class="btn btn-outline-primary">Crear nota</a>
-		<hr/>
-	</div>
-	<?php
-	if(count($dataToView["data"])>0){
-		foreach($dataToView["data"] as $note){
-			?>
-			<div class="col-md-3">
-				<div class="card-body border border-secondary rounded">
-					<h5 class="card-title"><?php echo $note['title']; ?></h5>
-					<div class="card-text"><?php echo nl2br($note['content']); ?></div>
-					<hr class="mt-1"/>
-					<a href="index.php?controller=note&action=edit&id=<?php echo $note['id']; ?>" class="btn btn-primary">Editar</a>
-					<a href="index.php?controller=note&action=confirmDelete&id=<?php echo $note['id']; ?>" class="btn btn-danger">Eliminar</a>
-				</div>
-			</div>
-			<?php
-		}
-	}else{
-		?>
-		<div class="alert alert-info">
-			Actualmente no existen notas.
-		</div>
-		<?php
-	}
-	?>
-</div>
-*/
-?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <h1>Welcome to MVC Pattern Basics!</h1>
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action" href="?controller=Subscriber&action=getAllSubscribers">Subscriber Controller</a>
+        <a class="list-group-item list-group-item-action" href="?controller=User&action=getAllUsers">User Controller</a>
+</body>
+</html>
