@@ -1,3 +1,9 @@
+<?php
+
+echo "helloworl";
+
+/* 
+
 <div class="row">
 	<div class="col-md-12 text-right">
 		<a href="index.php?controller=note&action=edit" class="btn btn-outline-primary">Crear nota</a>
@@ -27,3 +33,5 @@
 	}
 	?>
 </div>
+*/
+?>
