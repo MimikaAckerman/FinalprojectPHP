@@ -1,7 +1,11 @@
 <?php 
 
+<<<<<<< HEAD
 require_once 'config/db.php';
 
+=======
+require_once("../config/db.php");
+>>>>>>> dadv
 
 class Db {
 

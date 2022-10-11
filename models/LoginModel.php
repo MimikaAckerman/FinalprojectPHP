@@ -3,9 +3,11 @@
 //Hace las peticiones para ver si estas logeado, si te quieres logear, si te quieres deslogear
 //si te quieres crear un usuario.
 
+require_once './models/db.php';
+
 class loginModel {
 
-	private $table = 'note';
+	private $table = 'notes';
 	private $conection;
 
 	public function __construct() {

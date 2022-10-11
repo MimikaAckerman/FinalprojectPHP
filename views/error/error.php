@@ -7,6 +7,7 @@
 </head>
 <body>
     <?php
+    $errorMsg = "Error";
     echo "<h1>". $errorMsg ."</h1>";
     ?>
 </body>
