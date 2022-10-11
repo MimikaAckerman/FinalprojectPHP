@@ -25,25 +25,15 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input required type="text" value="<?php echo isset($this->data['name']) ? $this->data['name'] : null ?>" class="form-control" id="name" name="name" aria-describedby="name" placeholder="Enter name">
+                        <label for="name">Title</label>
+                        <input required type="text" value="<?php echo isset($this->data['name']) ? $this->data['title'] : null ?>" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title">
                     </div>
 
                 </div>
                 <div class="col">
                     <div class="form-group">
-                        <label for="lastname">Last name</label>
-                        <input required type="text" value="<?php echo isset($this->data['last_name']) ? $this->data['last_name'] : null ?>" class="form-control" id="last_name" name="last_name" aria-describedby="last_nameHelp" placeholder="Enter lastname">
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input required type="email" value="<?php echo isset($this->data['email']) ? $this->data['email'] : null ?>" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="content">Content</label>
+                        <input required type="text" value="<?php echo isset($this->data['content']) ? $this->data['content'] : null ?>" class="form-control" id="content" name="content" aria-describedby="contentHelp" placeholder="Enter content">
                     </div>
                 </div>
             </div>
@@ -51,8 +41,18 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="text" value="<?php echo isset($this->data['password']) ? $this->data['password'] : null ?>" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
+                        <label for="exampleInputInitialDate1">Initial date</label>
+                        <input required type="text" value="<?php echo isset($this->data['initial_date']) ? $this->data['initial_date'] : null ?>" class="form-control" id="initial_date" name="initial_date" aria-describedby="initial_dateHelp" placeholder="Enter initial date">
+                        <small id="initial_dateHelp" class="form-text text-muted">We'll never share your initial date with anyone else.</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+                        <label for="final_date">Final date</label>
+                        <input type="text" value="<?php echo isset($this->data['final_date']) ? $this->data['final_date'] : null ?>" class="form-control" id="final_date" name="final_date" aria-describedby="final_dateHelp" placeholder="Enter final date">
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ class NoteModel extends Model
 {
     function get()
     {
-        $query = $this->db->connect()->prepare("SELECT e.id, e.name, e.last_name, e.email, e.password
+        $query = $this->db->connect()->prepare("SELECT e.id, e.title, e.content, e.initial_date, e.final_date
         FROM notes e
         ORDER BY e.id ASC;");
 
@@ -19,7 +19,7 @@ class NoteModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id, name, last_name, email, password
+        $query = $this->db->connect()->prepare("SELECT id, title, content, initial_date, final_date
         FROM notes e
         WHERE id = $id;");
 
@@ -34,14 +34,14 @@ class NoteModel extends Model
 
     function create($note)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO notes (name, last_name, email, password)
+        $query = $this->db->connect()->prepare("INSERT INTO notes (title, content, initial_date, final_date)
         VALUES
         (?, ?, ?, ?);");
 
-        $query->bindParam(1, $note["name"]);
-        $query->bindParam(2, $note["last_name"]);
-        $query->bindParam(3, $note["email"]);
-        $query->bindParam(4, $note["password"]);
+        $query->bindParam(1, $note["title"]);
+        $query->bindParam(2, $note["content"]);
+        $query->bindParam(3, $note["initial_date"]);
+        $query->bindParam(4, $note["final_date"]);
 
         try {
             $query->execute();
@@ -54,13 +54,13 @@ class NoteModel extends Model
     function update($note)
     {
         $query = $this->db->connect()->prepare("UPDATE notes
-        SET name = ?, last_name = ?, email = ?, password = ?
+        SET title = ?, content = ?, initial_date = ?, final_date = ?
         WHERE id = ?;");
 
-        $query->bindParam(1, $note["name"]);
-        $query->bindParam(2, $note["last_name"]);
-        $query->bindParam(3, $note["email"]);
-        $query->bindParam(4, $note["password"]);
+        $query->bindParam(1, $note["title"]);
+        $query->bindParam(2, $note["content"]);
+        $query->bindParam(3, $note["initial_date"]);
+        $query->bindParam(4, $note["final_date"]);
         $query->bindParam(6, $note["id"]);
 
         try {

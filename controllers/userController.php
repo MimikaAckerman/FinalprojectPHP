@@ -12,6 +12,7 @@ class UserController
         if (isset($users)) {
             $this->view->data = $users;
             $this->view->render("user/userDashboard");
+            $this->view->render("controllers/LoginController.php");
         }
     }
 

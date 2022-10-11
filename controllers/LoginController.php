@@ -8,11 +8,14 @@ $email = $_POST['email'];
 
 $passw = $_POST['pass'];
 
-if($email == "cesardavidmor@gmail.com" && $passw == 1234){
+foreach ($this->data as $index => $user) {
+  if($email == $user["email"] && $passw == $user["password"]){
 
-  header("Location: ../index.php?controller=User&action=getAllUsers");
+    header("Location: ../index.php?controller=User&action=getAllUsers");
 
-} else {
-  header("Location: ../error/error.php");
+  } else {
+    header("Location: ../error/error.php");
+  }
 }
+
 
