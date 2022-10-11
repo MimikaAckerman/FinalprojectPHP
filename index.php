@@ -8,7 +8,7 @@ require_once "core/classes/View.php";
 require_once "core/classes/Controller.php";
 
 require_once "core/Router.php";
-
+require_once "views/login/login.php";
 $router = new Router();
 
 /* require_once 'view/template/header.php';
