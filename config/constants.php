@@ -1,19 +1,15 @@
 <?php
+    include_once "baseConstants.php";
 
-include_once 'baseConstants.php';
-
-
-//CONTROLLERS
-define("CONTROLLERS",BASE_PATH.'/controllers/');
-
-//VIEWS
-define("VIEW",BASE_PATH.'/views/');
-
-//MODELS
-define("MODEL",BASE_PATH.'/models/');
-
-//RESOURCES
-define("RESOURCES", BASE_PATH . '/resources/');
-
-
+    //CONTROLLERS
+    define("CONTROLLERS", BASE_PATH . '/controller/');
+    
+    //VIEWS
+    define("VIEWS", BASE_PATH . '/view/');
+    
+    //MODELS
+    define("MODELS", BASE_PATH . '/model/');
+    
+    //RESOURCES
+    define("RESOURCES", BASE_PATH . '/resources/');
 ?>
