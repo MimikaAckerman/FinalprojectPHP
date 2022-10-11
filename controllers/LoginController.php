@@ -9,6 +9,8 @@ $email = $_POST['email'];
 $passw = $_POST['pass'];
 
 if($email == "cesardavidmor@gmail.com" && $passw == 1234){
+
+  header("Location: ../index.php");
 $login = new LoginModel();
 
 $login->getConection();
