@@ -13,10 +13,4 @@ $router = new Router();
 
 /* require_once 'view/template/header.php';
 require_once 'view/'.$controller->view.'.php';
-<<<<<<< HEAD
 require_once 'view/template/footer.php'; */
-=======
-require_once 'view/template/footer.php'; */
-
-echo "Estas logeado y en index";
->>>>>>> dadv
