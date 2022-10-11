@@ -1,90 +1,11 @@
 <?php
 
-require_once MODELS . "loginModel.php";
-
-$action = "";
-
-if (isset($_REQUEST["action"])) {
-    $action = $_REQUEST["action"];
-}
-
-if (function_exists($action)) {
-    call_user_func($action, $_REQUEST);
-} else {
-    error("Invalid user action");
-}
-
-/* ~~~ CONTROLLER FUNCTIONS ~~~ */
-
-function getAllEmployees()
-{
-    $employees = get();
-    if (isset($employees)) {
-        require_once VIEWS . "";
-    } else {
-        error("There is a database error, try again.");
-    }
-}
-
-function getEmployee($request)
-{
-    $action = $request["action"];
-    $employee = null;
-    if (isset($request["id"])) {
-        $employee = getById($request["id"]);
-    }
-    require_once VIEWS . "";
-}
-
-function createEmployee($request)
-{
-    $action = $request["action"];
-    if (sizeof($_POST) > 0) {
-        $employee = create($_POST);
-
-        if ($employee[0]) {
-            header("");
-        } else {
-            echo $employee[1];
-        }
-    } else {
-        require_once VIEWS . "/employee/employee.php";
-    }
-}
-
-function updateEmployee($request)
-{
-    $action = $request["action"];
-    if (sizeof($_POST) > 0) {
-        $employee = update($_POST);
-
-        if ($employee[0]) {
-            header("Location: ");
-        } else {
-            $employee = $_POST;
-            $error = "The data entered is incorrect, check that there is no other employee with that email.";
-            require_once VIEWS . "";
-        }
-    } else {
-        require_once VIEWS . "";
-    }
-}
-
-function deleteEmployee($request)
-{
-    $action = $request["action"];
-    $employee = null;
-    if (isset($request["id"])) {
-        $employee = delete($request["id"]);
-        header("");
-    }
-}
-//////
 function error($errorMsg)
 {
     require_once VIEWS . "/error/error.php";
 }
 require_once '../models/LoginModel.php';
+
 
 //Recive las peticiones y decidira a que metodo llamar del LoginModel.php
 
@@ -94,13 +15,9 @@ $passw = $_POST['pass'];
 
 if($email == "cesardavidmor@gmail.com" && $passw == 1234){
 
-  header("Location: ../index.php");
-$login = new LoginModel();
+  header("Location: ../index.php?controller=User&action=getAllUsers");
 
-$login->getConection();
-$login -> getNotes();
-echo $login['id'];
 } else {
-  header("Location: ../views/error/error.php");
+  header("Location: ../error/error.php");
 }
 
