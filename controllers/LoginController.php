@@ -1,6 +1,6 @@
 <?php
 
-require_once '../models/LoginModel.php';
+
 
 //Recive las peticiones y decidira a que metodo llamar del LoginModel.php
 
@@ -10,13 +10,9 @@ $passw = $_POST['pass'];
 
 if($email == "cesardavidmor@gmail.com" && $passw == 1234){
 
-  header("Location: ../index.php");
-$login = new LoginModel();
+  header("Location: ../index.php?controller=User&action=getAllUsers");
 
-$login->getConection();
-$login -> getNotes();
-echo $login['id'];
 } else {
-  header("Location: ../views/error/error.php");
+  header("Location: ../error/error.php");
 }
 
