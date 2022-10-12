@@ -5,7 +5,32 @@
 
 class LoginModel extends Model{
 
-	
+	function get() {
+        $query = $this->db->connect()->prepare("SELECT email, `password`
+        FROM users;");
+
+        try{
+            $query->execute();
+            $users = $query->fetchAll();
+            return $users;
+        }   catch(PDOException $e) {
+            return [];
+        }
+    }
+
+    function getEmail($email) {
+        $query = $this->db->connect()->prepare("SELECT email, `password`
+        FROM users WHERE email = $email;");
+
+        try{
+            $query->execute();
+            $users = $query->fetchAll();
+            return $users;
+        } catch(PDOException $e){
+            return [];
+        }
+    }
+
 }
 
 ?>
