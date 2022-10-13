@@ -8,11 +8,12 @@ class Router
             $controllerName = $_GET['controller'] . "Controller";
             $controllerPath = CONTROLLERS . $controllerName . ".php";
             $fileExists = file_exists($controllerPath);
+          $controllerPath;
             if ($fileExists) {
-                require_once $controllerPath;
+              require_once $controllerPath;
                 $controller = new $controllerName;
             } else {
-                $errorMsg = "The page you are trying to access does not exist.";
+                 $errorMsg = "The page you are trying to access does not exist.";
                 require_once VIEWS . "error/error.php";
             }
         } else {

@@ -1,19 +1,17 @@
 <?php
 
-<?php
-
 class NoteModel extends Model
 {
     function get()
     {
-        $query = $this->db->connect()->prepare("SELECT e.id, e.title, e.content, e.initial_date, e.final_date
-        FROM notes e
-        ORDER BY e.id ASC;");
+        $query = $this->db->connect()->prepare("SELECT note.id, note.title, note.content, note.fecha_inicio, note.fecha_final
+        FROM note 
+        ORDER BY note.id ASC;");
 
         try {
             $query->execute();
-            $notes = $query->fetchAll();
-            return $notes;
+            $note = $query->fetchAll();
+            return $note;
         } catch (PDOException $e) {
             return [];
         }
@@ -21,8 +19,8 @@ class NoteModel extends Model
 
     function getById($id)
     {
-        $query = $this->db->connect()->prepare("SELECT id, title, content, initial_date, final_date
-        FROM notes e
+        $query = $this->db->connect()->prepare("SELECT id, title, content, fecha_inicio, fecha_final
+        FROM note 
         WHERE id = $id;");
 
         try {
@@ -36,14 +34,14 @@ class NoteModel extends Model
 
     function create($note)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO notes (title, content, initial_date, final_date)
+        $query = $this->db->connect()->prepare("INSERT INTO notes (title, content, fecha_inicio, fecha_final)
         VALUES
         (?, ?, ?, ?);");
 
         $query->bindParam(1, $note["title"]);
         $query->bindParam(2, $note["content"]);
-        $query->bindParam(3, $note["initial_date"]);
-        $query->bindParam(4, $note["final_date"]);
+        $query->bindParam(3, $note["fecha_inicio"]);
+        $query->bindParam(4, $note["fecha_final"]);
 
         try {
             $query->execute();
@@ -56,13 +54,13 @@ class NoteModel extends Model
     function update($note)
     {
         $query = $this->db->connect()->prepare("UPDATE notes
-        SET title = ?, content = ?, initial_date = ?, final_date = ?
+        SET title = ?, content = ?, fecha_inicio = ?, fecha_final = ?
         WHERE id = ?;");
 
         $query->bindParam(1, $note["title"]);
         $query->bindParam(2, $note["content"]);
-        $query->bindParam(3, $note["initial_date"]);
-        $query->bindParam(4, $note["final_date"]);
+        $query->bindParam(3, $note["fecha_inicio"]);
+        $query->bindParam(4, $note["fecha_final"]);
         $query->bindParam(6, $note["id"]);
 
         try {
@@ -75,7 +73,7 @@ class NoteModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM notes WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM note WHERE id = ?");
         $query->bindParam(1, $id);
 
         try {

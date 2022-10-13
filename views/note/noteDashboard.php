@@ -30,8 +30,8 @@
                 echo "<td class='tg-0lax'>" . $note["id"] . "</td>";
                 echo "<td class='tg-0lax'>" . $note["title"] . "</td>";
                 echo "<td class='tg-0lax'>" . $note["content"] . "</td>";
-                echo "<td class='tg-0lax'>" . $note["initial_date"] . "</td>";
-                echo "<td class='tg-0lax'>" . $note["final_date"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["fecha_inicio"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["fecha_final"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
                 <a class='btn btn-secondary' href='?controller=Note&action=getNote&id=" . $note["id"] . "'>Edit</a>
                 <a class='btn btn-danger' href='?controller=Note&action=deleteNote&id=" . $note["id"] . "'>Delete</a>
