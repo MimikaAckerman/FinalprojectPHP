@@ -1,4 +1,29 @@
 <?php
 
-//Hace las peticiones para ver si estas logeado, si te quieres logear, si te quieres deslogear
-//si te quieres crear un usuario.
+class LoginModel extends Model
+{
+
+    function login($logged)
+    {
+        $emailU = $logged["user"];
+        $passU = $logged["password"];
+        $log = $this->db->connect()->prepare("SELECT e.email, e.password
+        FROM users e
+        WHERE e.email='" . $emailU . "' AND e.password='" . $passU . "';");
+
+        try {
+            $log->execute();
+            $infoLog = $log->fetch();
+            print_r($infoLog);
+
+            if (isset($infoLog['email']) && isset($infoLog['password'])) {
+
+                $_SESSION['user'] = $infoLog['email'];
+            } else {
+                session_destroy();
+            }
+        } catch (PDOException $error) {
+            return [false, $error];
+        }
+    }
+}
