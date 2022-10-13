@@ -1,9 +1,29 @@
 <?php
 
+class LoginController
+{
 
+    use Controller;
 
-//Recive las peticiones y decidira a que metodo llamar del LoginModel.php
+    function login($request)
+    {
+        $log = null;
 
+        if (isset($request)) {
 
+            $log = $this->model->login($request);
+            if (isset($_SESSION['user'])) {
+                header("Location: index.php?controller=user&action=getAllUsers");
+            } else {
+                header("Location: index.php");
+            }
+        }
+    }
 
+    function logout()
+    {
 
+        session_destroy();
+        header("Location: index.php");
+    }
+}

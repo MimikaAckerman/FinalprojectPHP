@@ -1,6 +1,6 @@
 <?php
 
-class NoteModel extends Model
+class favNoteModel extends Model
 {
     function get()
     {
@@ -10,8 +10,8 @@ class NoteModel extends Model
 
         try {
             $query->execute();
-            $notes = $query->fetchAll();
-            return $notes;
+            $favNote = $query->fetchAll();
+            return $favNote;
         } catch (PDOException $e) {
             return [];
         }
@@ -23,25 +23,26 @@ class NoteModel extends Model
         FROM notes e
         WHERE id = $id;");
 
+
         try {
             $query->execute();
-            $note = $query->fetch();
-            return $note;
+            $favNote = $query->fetch();
+            return $favNote;
         } catch (PDOException $e) {
             return [];
         }
     }
 
-    function create($note)
+    function create($favNote)
     {
-        $query = $this->db->connect()->prepare("INSERT INTO notes (title, content, initial_date, final_date)
+        $query = $this->db->connect()->prepare("INSERT favNote (title, content, fecha_inicio, fecha_final)
         VALUES
         (?, ?, ?, ?);");
 
-        $query->bindParam(1, $note["title"]);
-        $query->bindParam(2, $note["content"]);
-        $query->bindParam(3, $note["initial_date"]);
-        $query->bindParam(4, $note["final_date"]);
+            $query->bindParam(1, $favNote["title"]);
+            $query->bindParam(2, $favNote["content"]);
+            $query->bindParam(3, $favNote["fecha_inicio"]);
+            $query->bindParam(4, $favNote["fecha_final"]);
 
         try {
             $query->execute();
@@ -51,17 +52,18 @@ class NoteModel extends Model
         }
     }
 
-    function update($note)
+    function update($favNote)
     {
-        $query = $this->db->connect()->prepare("UPDATE notes
-        SET title = ?, content = ?, initial_date = ?, final_date = ?
+        echo "update model";
+        $query = $this->db->connect()->prepare("UPDATE favNote
+        SET title = ?, content = ?, fecha_inicio = ?, fecha_final = ?
         WHERE id = ?;");
 
-        $query->bindParam(1, $note["title"]);
-        $query->bindParam(2, $note["content"]);
-        $query->bindParam(3, $note["initial_date"]);
-        $query->bindParam(4, $note["final_date"]);
-        $query->bindParam(5, $note["id"]);
+            $query->bindParam(1, $favNote["title"]);
+            $query->bindParam(2, $favNote["content"]);
+            $query->bindParam(3, $favNote["fecha_inicio"]);
+            $query->bindParam(4, $favNote["fecha_final"]);
+            $query->bindParam(5, $favNote["id"]);
 
         try {
             $query->execute();
@@ -73,7 +75,7 @@ class NoteModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM notes WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM favNote WHERE id = ?");
         $query->bindParam(1, $id);
 
         try {

@@ -30,7 +30,7 @@
 
 
 					<div class="row">
-						<form id="form" method="post" action="./controllers/LoginController.php">
+						<form id="form" method="post" action="?controller=User&action=getAllUsers">
 							<div class="row">
 								<input type="text" name="email" id="username" class="form__input" placeholder="Enter your email...">
 							</div>
