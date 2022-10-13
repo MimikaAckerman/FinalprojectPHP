@@ -1,6 +1,7 @@
 <?php
+	echo 'hello world';
 	
-class UserController
+ class NoteController
 {
 	use Controller;
 
