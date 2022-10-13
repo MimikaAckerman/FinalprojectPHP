@@ -1,55 +1,83 @@
 <?php
-    
-    class noteController{
-         
-        public $page_title;
-        public $view;
+	
+class UserController
+{
+	use Controller;
 
-        public function __construct(){
+//controllers
+function getAllNotes(){
 
-            $this -> view = 'list_note';
-            $this -> page_title = '';
-            $this -> noteObj = new note();
+$notes = 
+		$this -> model -> get();
+		if(isset($notes)){
+			$this -> view -> data = $notes;
+			$this -> view -> render('note/noteDashboard');
+		}
+}
+
+function getNotes($id){
+	$notes = null;
+	if(isset($id['id'])){
+		$note =
+		$this -> model -> getById
+		($id['id']);
+	}
+	$this -> view -> action = $id['action'];
+	$this -> view -> data = $note;
+	$this -> view -> render('note/note');
+}
+function createNote($id){
+	if (sizeof($_POST) > 0) {
+		$note = $this->model->create($_POST);
+
+		if ($note[0]) {
+			header("Location: index.php?controller=note&action=getAll
+			note");
+		} else {
+			echo $note[1];
+		}
+	} else {
+		$this->view->action = $request["action"];
+		$this->view->render("note/note");
+	}
+}
+
+function updateNote($id){
+	if (sizeof($_POST) > 0) {
+		$note = $this->model->update($_POST);
+
+		if ($note[0]) {
+			header("Location: index.php?controller=Note&action=getAllNotes");
+		} else {
+			$this->action = $id["action"];
+			$this->error = "The data entered is incorrect, check that there is no other user with that name.";
+			$this->view->render("note/note");
+		}
+	} else {
+		$this->view->render("note/note");
+	}
+}
+function deleteNote($id){
+	$action = $id["action"];
+        $id = null;
+        if (isset($id["id"])) {
+            $id = $this->model->delete($id["id"]);
+            header("Location: index.php?controller=note&action=getAllNotes");
         }
-
-        //list all notes
-        public function list(){
-            $this -> page_title = 'list note';
-            return $this -> noteObj -> getNotes();
-        }
-
-        //load note for edit
-        public function edit($id = null){
-            $this -> page_title = 'edit note';
-            $this -> view = 'edit_note';
-                //id cant we use form param of method param
-                if(isset($_GET['id'])) $id = $_GET['id'];
-                return $this -> noteObj -> getNoteById($id);
-        }
-
-        //create or update note
-        public function save(){
-            $this -> page_title = 'edit notes';
-            $this -> view  ='edit_note';
-            $id = $this -> noteObj -> save($_POST);
-            $result = $this -> noteObj -> getNoteById($id);
-            $_GET['response'] = true;
-            return $result;
-        }
-
-        //confirm to delete
-        public function confirm_delete(){
-            $this -> page_title  ='delete note';
-            $this -> view = 'confirm_delete';
-            return $this -> noteObj -> getNoteById($_GET['id']);
-        }
-
-        //delete
-        public function delete(){
-            $this -> page_title ='list note';
-            $this -> view = 'delete_note';
-            return $this -> noteObj -> deleteNoteById($_POST['id']);
-        }
+	}
+}
 
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+?>

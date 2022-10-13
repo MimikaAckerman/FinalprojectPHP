@@ -9,5 +9,6 @@ require_once "core/classes/Controller.php";
 
 require_once "core/Router.php";
 require_once "views/login/login.php";
-$router = new Router();
+
+
 
