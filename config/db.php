@@ -1,13 +1,6 @@
 <?php
-
-/* Database connection values */
-define("DB_HOST", "localhost");
-define("DB", "notes");
-define("DB_USER", "root");
-define("DB_PASS", "");
-
-/* Default options */
-define("DEFAULT_CONTROLLER", "note");
-define("DEFAULT_ACTION", "list");
-
-?>
+define('HOST', 'localhost');
+define('DB', 'notes');
+define('USER', 'root');
+define('PASSWORD', '');
+define('CHARSET', 'utf8mb4');
