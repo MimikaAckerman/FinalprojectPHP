@@ -4,9 +4,6 @@
     --text-color: black;
     --task-color: white;
     --footer-color: #1e1e1e;
-    --theme-btn: url("assets/Dark-theme-btn.svg");
-    --container-bg: url("./assets/Light-empty.svg");
-    --complete-icon: url("assets/complete.svg");
     --filter: none;
     --theme-transition: 0s;
 }
@@ -22,6 +19,11 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+
+
+
+
+    
 }
 
 .container {
@@ -219,3 +221,8 @@ footer form {
         margin-right: 20px;
     }
 }
+
+
+
+
+/*modal*/

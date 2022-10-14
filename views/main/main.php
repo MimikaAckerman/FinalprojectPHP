@@ -10,7 +10,7 @@
 <body>
     <h1>Welcome to MVC Pattern Basics!</h1>
     <div class="list-group">
-        <a class="list-group-item list-group-item-action" href="?controller=Note&action=getAllNotes">Subscriber Controller</a>
-        <a class="list-group-item list-group-item-action" href="?controller=favNotes&action=getAllNotes">Reserved Controller</a>
+        <a class="list-group-item list-group-item-action" href="?controller=Note&action=getAllNotes">view notes</a>
+        <a class="list-group-item list-group-item-action" href="?controller=fav&action=getAllfavNotes">view favNotes</a>
 </body>
 </html>
