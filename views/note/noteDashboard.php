@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="assets/css/noteDashboard.css" />
 
 <!-- JavaScript Bundle with Popper -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="/assets/js/utils.js"></script>
 
@@ -53,6 +53,8 @@
                         echo "<td class='tg-0lax'>" . $notes["final_date"] . "</td>";
                         echo "<td colspan='2' class='tg-0lax'>
                         
+
+                        
                         <a class='btn btn-secondary' href='?controller=Note&action=getNote&id=" . $notes["id"] . "'>Edit</a>
                         <a class='btn btn-danger' href='?controller=Note&action=deleteNote&id=" . $notes["id"] . "'>Delete</a>
                     
@@ -72,13 +74,41 @@
         </section>
         <footer>
            
-
             <a id="home" class="btn btn-light"   href="?controller=Note&action=createNote">Create</a>
             <a id="home" class="btn btn-light" href="./">Back</a>
 
-   
 
-           
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Favorite notes
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit notes</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
         </footer>
     </div>
 
