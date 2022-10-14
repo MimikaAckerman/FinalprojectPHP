@@ -28,12 +28,14 @@
                         <label for="name">Title</label>
                         <input required type="text" value="<?php echo isset($this->data['name']) ? $this->data['title'] : null ?>" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title">
                     </div>
-
                 </div>
+            </div>
+
+            <div class="form-row">
                 <div class="col">
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <input required type="text" value="<?php echo isset($this->data['content']) ? $this->data['content'] : null ?>" class="form-control" id="content" name="content" aria-describedby="contentHelp" placeholder="Enter content">
+                        <textarea required type="text" value="<?php echo isset($this->data['content']) ? $this->data['content'] : null ?>" class="form-control" id="content" name="content" aria-describedby="contentHelp" placeholder="Enter content"></textarea>
                     </div>
                 </div>
             </div>
@@ -43,7 +45,6 @@
                     <div class="form-group">
                         <label for="exampleInputInitialDate1">Initial date</label>
                         <input required type="text" value="<?php echo isset($this->data['initial_date']) ? $this->data['initial_date'] : null ?>" class="form-control" id="initial_date" name="initial_date" aria-describedby="initial_dateHelp" placeholder="Enter initial date">
-                        <small id="initial_dateHelp" class="form-text text-muted">We'll never share your initial date with anyone else.</small>
                     </div>
                 </div>
             </div>
