@@ -75,6 +75,66 @@
             <a id="home" class="btn btn-light" href="./">Back</a>
 
 
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                Favorite notes
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit notes</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                        <div class="modal-body">
+                            <table class="table">
+
+                                <div class="theme_toogle">
+                                    <button class="theme_toogle_btn"></button>
+                                </div>
+                                <span class="heading">My Day</span>
+
+                                <thead>
+                                    <tr>
+                                        <!--    <th class="tg-0pky">ID</th> -->
+                                        <th class="tg-0pky">Title</th>
+                                        <th class="tg-0lax">Content</th>
+                                        <th class="tg-0lax">Initial date</th>
+                                        <th class="tg-0lax">Final date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($this->data as $index => $favNote) {
+                                        echo "<tr>";
+                                        /*     echo "<td class='tg-0lax'>" . $favNote["id"] . "</td>"; */
+                                        echo "<td class='tg-0lax'>" . $favNote["title"] . "</td>";
+                                        echo "<td class='tg-0lax'>" . $favNote["content"] . "</td>";
+                                        echo "<td class='tg-0lax'>" . $favNote["initial_date"] . "</td>";
+                                        echo "<td class='tg-0lax'>" . $favNote["final_date"] . "</td>";
+                                        echo "<td colspan='2' class='tg-0lax'>
+
+        <a class='btn btn-secondary' href='?controller=favNote&action=getFavNote&id=" . $favNote["id"] . "'>Edit</a>
+        <a class='btn btn-danger' href='?controller=FavNote&action=deleteFavNote&id=" . $favNote["id"] . "'>Delete</a>
+
+
+        </td>";
+
+                                        echo "</tr>";
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
         </footer>
