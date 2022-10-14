@@ -52,9 +52,6 @@
                         echo "<td class='tg-0lax'>" . $notes["initial_date"] . "</td>";
                         echo "<td class='tg-0lax'>" . $notes["final_date"] . "</td>";
                         echo "<td colspan='2' class='tg-0lax'>
-                        
-
-                        
                         <a class='btn btn-secondary' href='?controller=Note&action=getNote&id=" . $notes["id"] . "'>Edit</a>
                         <a class='btn btn-danger' href='?controller=Note&action=deleteNote&id=" . $notes["id"] . "'>Delete</a>
                     
@@ -73,7 +70,6 @@
             <ul id="tasksList"></ul>
         </section>
         <footer>
-           
             <a id="home" class="btn btn-light"   href="?controller=Note&action=createNote">Create</a>
             <a id="home" class="btn btn-light" href="./">Back</a>
 
@@ -93,7 +89,57 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
+
         ...
+        <div class="theme_toogle">
+                <button class="theme_toogle_btn"></button>
+            </div>
+            <span class="heading">My Day</span>
+
+
+
+            <!--ESTO ES EL CODIGO PHP-->
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <!--    <th class="tg-0pky">ID</th> -->
+                        <th class="tg-0pky">Title</th>
+                        <th class="tg-0lax">Content</th>
+                        <th class="tg-0lax">Initial date</th>
+                        <th class="tg-0lax">Final date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    foreach ($this->data as $index => $favNote) {
+                        echo "<tr>";
+                        /*     echo "<td class='tg-0lax'>" . $favNote["id"] . "</td>"; */
+                        echo "<td class='tg-0lax'>" . $favNote["title"] . "</td>";
+                        echo "<td class='tg-0lax'>" . $favNote["content"] . "</td>";
+                        echo "<td class='tg-0lax'>" . $favNote["initial_date"] . "</td>";
+                        echo "<td class='tg-0lax'>" . $favNote["final_date"] . "</td>";
+                        echo "<td colspan='2' class='tg-0lax'>
+                        <a class='btn btn-secondary' href='?controller=favNote&action=getFavNote&id=" . $favNote["id"] . "'>Edit</a>
+                        <a class='btn btn-danger' href='?controller=FavNote&action=deleteFavNote&id=" . $favNote["id"] . "'>Delete</a>
+                        </td>";
+
+                        echo "</tr>";
+                    }
+                    ?>
+                </tbody>
+            </table>
+
+
+
+
+
+
+
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -112,7 +158,7 @@
         </footer>
     </div>
 
-<!--MODAL DE CREATE NOTE-->
+
 
 
 
