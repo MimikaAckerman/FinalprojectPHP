@@ -13,7 +13,7 @@ class LoginController
 
             $log = $this->model->login($request);
             if (isset($_SESSION['user'])) {
-                header("Location: index.php?controller=user&action=getAllUsers");
+                header("Location: index.php?controller=Note&action=getAllNotes");
             } else {
                 header("Location: index.php");
             }

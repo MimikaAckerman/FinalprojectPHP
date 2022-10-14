@@ -53,6 +53,7 @@
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input type="text" value="<?php echo isset($this->data['password']) ? $this->data['password'] : null ?>" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
+                        <small id="password" class="form-text text-muted">We'll never share your password with anyone else.</small>
                     </div>
                 </div>
             </div>
