@@ -37,7 +37,7 @@
                         <form id="form" method="post" action="?controller=Login&action=login">
                             <div class="row">
                                 <label for="user">Email</label>
-                                <input type="email" name="user" id="user" class="form__input" placeholder="Enter your email...">
+                                <input type="text" name="user" id="user" class="form__input" placeholder="Enter your email...">
                             </div>
                             <div class="row">
                                 <label for="password">Password</label>
