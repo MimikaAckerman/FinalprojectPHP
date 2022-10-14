@@ -26,7 +26,7 @@
 					</div>
                     <!--PAGE PHP -->
 					<div class="row">
-						<form id="form" method="post" action="?controller=User&action=getAllUsers">
+						<form id="form" method="post" action="?controller=Note&action=getAllNotes">
 							<div class="row">
 								<input type="text" name="email" id="username" class="form__input" placeholder="Enter your email...">
 							</div>
