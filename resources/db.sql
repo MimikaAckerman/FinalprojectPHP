@@ -1,7 +1,7 @@
 -- Database creation
-DROP DATABASE IF EXISTS notes;
-CREATE DATABASE IF NOT EXISTS notes;
-USE notes;
+DROP DATABASE IF EXISTS todoList;
+CREATE DATABASE IF NOT EXISTS todoList;
+USE todoList;
 
 -- Creation of the tables
 
