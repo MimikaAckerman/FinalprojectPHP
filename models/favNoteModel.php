@@ -1,17 +1,17 @@
 <?php
 
-class favNoteModel extends Model
+class favouritesModel extends Model
 {
     function get()
     {
         $query = $this->db->connect()->prepare("SELECT e.id, e.title, e.content, e.initial_date, e.final_date
-        FROM notes e
+        FROM favourites e
         ORDER BY e.id ASC;");
 
         try {
             $query->execute();
-            $favNote = $query->fetchAll();
-            return $favNote;
+            $favourites = $query->fetchAll();
+            return $favourites;
         } catch (PDOException $e) {
             return [];
         }
@@ -20,29 +20,29 @@ class favNoteModel extends Model
     function getById($id)
     {
         $query = $this->db->connect()->prepare("SELECT id, title, content, initial_date, final_date
-        FROM notes e
+        FROM favourites e
         WHERE id = $id;");
 
 
         try {
             $query->execute();
-            $favNote = $query->fetch();
-            return $favNote;
+            $favourites = $query->fetch();
+            return $favourites;
         } catch (PDOException $e) {
             return [];
         }
     }
 
-    function create($favNote)
+    function create($favourites)
     {
-        $query = $this->db->connect()->prepare("INSERT favNote (title, content, fecha_inicio, fecha_final)
+        $query = $this->db->connect()->prepare("INSERT favourites (title, content, initial_date, final_date)
         VALUES
         (?, ?, ?, ?);");
 
-            $query->bindParam(1, $favNote["title"]);
-            $query->bindParam(2, $favNote["content"]);
-            $query->bindParam(3, $favNote["fecha_inicio"]);
-            $query->bindParam(4, $favNote["fecha_final"]);
+            $query->bindParam(1, $favourites["title"]);
+            $query->bindParam(2, $favourites["content"]);
+            $query->bindParam(3, $favourites["initial_date"]);
+            $query->bindParam(4, $favourites["final_date"]);
 
         try {
             $query->execute();
@@ -52,18 +52,18 @@ class favNoteModel extends Model
         }
     }
 
-    function update($favNote)
+    function update($favourites)
     {
         echo "update model";
-        $query = $this->db->connect()->prepare("UPDATE favNote
-        SET title = ?, content = ?, fecha_inicio = ?, fecha_final = ?
+        $query = $this->db->connect()->prepare("UPDATE favourites
+        SET title = ?, content = ?, initial_date = ?, final_date = ?
         WHERE id = ?;");
 
-            $query->bindParam(1, $favNote["title"]);
-            $query->bindParam(2, $favNote["content"]);
-            $query->bindParam(3, $favNote["fecha_inicio"]);
-            $query->bindParam(4, $favNote["fecha_final"]);
-            $query->bindParam(5, $favNote["id"]);
+            $query->bindParam(1, $favourites["title"]);
+            $query->bindParam(2, $favourites["content"]);
+            $query->bindParam(3, $favourites["initial_date"]);
+            $query->bindParam(4, $favourites["final_date"]);
+            $query->bindParam(5, $favourites["id"]);
 
         try {
             $query->execute();
@@ -75,7 +75,7 @@ class favNoteModel extends Model
 
     function delete($id)
     {
-        $query = $this->db->connect()->prepare("DELETE FROM favNote WHERE id = ?");
+        $query = $this->db->connect()->prepare("DELETE FROM favourites WHERE id = ?");
         $query->bindParam(1, $id);
 
         try {
