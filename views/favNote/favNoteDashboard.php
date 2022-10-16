@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO-list</title>
 
-    <link rel="stylesheet" href="assets/css/noteDashboard.css" />
+    <!-- <link rel="stylesheet" href="assets/css/noteDashboard.css" /> -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
@@ -19,12 +19,12 @@
 </head>
 
 <body>
-    <div class="container task_list_empty">
+    <div class="">
         <header>
             <div class="theme_toogle">
                 <button class="theme_toogle_btn"></button>
             </div>
-            <span class="heading">My Day</span>
+            <span class="heading">Favorites</span>
 
 
 
@@ -68,16 +68,6 @@
         <section class="tasks">
             <ul id="tasksList"></ul>
         </section>
-        <footer>
-
-
-            <a id="home" class="btn btn-light" href="?controller=FavNote&action=createFavNote">Create</a>
-            <a id="home" class="btn btn-light" href="./">Back</a>
-
-
-
-
-        </footer>
     </div>
 </body>
 

@@ -25,8 +25,8 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
-                        <label for="name">Title</label>
-                        <input required type="text" value="<?php echo isset($this->data['name']) ? $this->data['title'] : null ?>" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title">
+                        <label for="title">Title</label>
+                        <input required type="text" value="<?php echo isset($this->data['title']) ? $this->data['title'] : null ?>" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title">
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="col">
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea required type="text" value="<?php echo isset($this->data['content']) ? $this->data['content'] : null ?>" class="form-control" id="content" name="content" aria-describedby="contentHelp" placeholder="Enter content"></textarea>
+                        <input required type="text" value="<?php echo isset($this->data['content']) ? $this->data['content'] : null ?>" class="form-control" id="content" name="content" aria-describedby="contentHelp" placeholder="Enter content">
                     </div>
                 </div>
             </div>
