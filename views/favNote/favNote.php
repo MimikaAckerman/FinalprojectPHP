@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <h1>FavFavNote's page!</h1>
+        <h1>FavNote's page!</h1>
         </br>
 
         <?php

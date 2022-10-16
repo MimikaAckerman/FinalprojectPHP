@@ -47,6 +47,6 @@ VALUES
 
 INSERT INTO favourites (title, content, initial_date, final_date)
 VALUES
-("Today", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "20-12-2020", "20-12-2020"),
+
 ("Task", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "15-01-2022", "15-01-2022"),
 ("Weekend", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "15-01-2022", "15-01-2022");
