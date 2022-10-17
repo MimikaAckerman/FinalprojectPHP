@@ -1,16 +1,29 @@
 <?php
-
-//Recive las peticiones y decidira a que metodo llamar del LoginModel.php
-
-$email = $_POST['email'];
-
-$passw = $_POST['pass'];
-
-if($email == "admin" && $passw == 1234){
-
-  header("Location: ../index.php?controller=User&action=getAllUsers");
-
-} else {
-  header("Location: ../error/error.php");
-}
-
+    class LoginController
+    {
+    
+        use Controller;
+    
+        function login($request)
+        {
+            $log = null;
+    
+            if (isset($request)) {
+    
+                $log = $this->model->login($request);
+                if (isset($_SESSION['user'])) {
+                    header("Location: index.php?controller=Note&action=getAllNotes");
+                } else {
+                    header("Location: index.php");
+                }
+            }
+        }
+    
+        function logout()
+        {
+    
+            session_destroy();
+            header("Location: index.php");
+        }
+    }
+?>

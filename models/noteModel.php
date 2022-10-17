@@ -1,89 +1,86 @@
-<?php 
+<?php
 
-class Note {
+class NoteModel extends Model
+{
+    function get()
+    {
+        $query = $this->db->connect()->prepare("SELECT notes.id, notes.title, notes.content, notes.initial_date, notes.final_date
+        FROM notes 
+        ORDER BY notes.id ASC;");
 
-	private $table = 'note';
-	private $conection;
+        try {
+            $query->execute();
+            $notes = $query->fetchAll();
+            return $notes;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
 
-	public function __construct() {
-		
-	}
+    function getById($id)
+    {
+        $query = $this->db->connect()->prepare("SELECT id, title, content, initial_date, final_date
+        FROM notes 
+        WHERE id = $id;");
 
-	/* Set conection */
-	public function getConection(){
-		$dbObj = new Db();
-		$this->conection = $dbObj->conection;
-	}
+        try {
+            $query->execute();
+            $notes = $query->fetch();
+            return $notes;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
 
-	/* Get all notes */
-	public function getNotes(){
-		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table;
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute();
+    function create($note)
+    {
+        $query = $this->db->connect()->prepare("INSERT INTO notes (title, content, initial_date, final_date)
+        VALUES
+        (?, ?, ?, ?);");
 
-		return $stmt->fetchAll();
-	}
+        $query->bindParam(1, $note["title"]);
+        $query->bindParam(2, $note["content"]);
+        $query->bindParam(3, $note["initial_date"]);
+        $query->bindParam(4, $note["final_date"]);
 
-	/* Get note by id */
-	public function getNoteById($id){
-		if(is_null($id)) return false;
-		$this->getConection();
-		$sql = "SELECT * FROM ".$this->table. " WHERE id = ?";
-		$stmt = $this->conection->prepare($sql);
-		$stmt->execute([$id]);
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
 
-		return $stmt->fetch();
-	}
+    function update($note)
+    {
+        $query = $this->db->connect()->prepare("UPDATE notes
+        SET title = ?, content = ?, initial_date = ?, final_date = ?
+        WHERE id = ?;");
 
-	/* Save note */
-	public function save($param){
-		$this->getConection();
+        $query->bindParam(1, $note["title"]);
+        $query->bindParam(2, $note["content"]);
+        $query->bindParam(3, $note["initial_date"]);
+        $query->bindParam(4, $note["final_date"]);
+        $query->bindParam(6, $note["id"]);
 
-		/* Set default values */
-		$title = $content = "";
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
 
-		/* Check if exists */
-		$exists = false;
-		if(isset($param["id"]) and $param["id"] !=''){
-			$actualNote = $this->getNoteById($param["id"]);
-			if(isset($actualNote["id"])){
-				$exists = true;	
-				/* Actual values */
-				$id = $param["id"];
-				$title = $actualNote["title"];
-				$content = $actualNote["content"];
-			}
-		}
+    function delete($id)
+    {
+        $query = $this->db->connect()->prepare("DELETE FROM notes WHERE id = ?");
+        $query->bindParam(1, $id);
 
-		/* Received values */
-		if(isset($param["title"])) $title = $param["title"];
-		if(isset($param["content"])) $content = $param["content"];
-
-		/* Database operations */
-		if($exists){
-			$sql = "UPDATE ".$this->table. " SET title=?, content=? WHERE id=?";
-			$stmt = $this->conection->prepare($sql);
-			$res = $stmt->execute([$title, $content, $id]);
-		}else{
-			$sql = "INSERT INTO ".$this->table. " (title, content) values(?, ?)";
-			$stmt = $this->conection->prepare($sql);
-			$stmt->execute([$title, $content]);
-			$id = $this->conection->lastInsertId();
-		}	
-
-		return $id;	
-
-	}
-
-	/* Delete note by id */
-	public function deleteNoteById($id){
-		$this->getConection();
-		$sql = "DELETE FROM ".$this->table. " WHERE id = ?";
-		$stmt = $this->conection->prepare($sql);
-		return $stmt->execute([$id]);
-	}
-
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
 }
-
-?>
