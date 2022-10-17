@@ -33,7 +33,7 @@
                             <input id="password" name="password" type="password" placeholder="Enter your password..." required>
                         </div>
                     </fieldset>
-                    <button type="submit" class="btn-login">Login</button>
+                    <input type="submit" value="Log In" class="btn-login">
                 </form>
             </div>
         </div>

@@ -19,7 +19,9 @@
 </head>
 
 <body>
+
     <div class="container task_list_empty">
+    
         <header>
             <!-- <div class="theme_toogle">
                 <button class="theme_toogle_btn"></button>
@@ -77,7 +79,7 @@
 
             <!-- Button trigger modal -->
             <a type="button" href="?controller=favNote&action=getAllFavNotes" class="btn btn-primary">Favorite notes</a>
-
+            <a id="home" class="btn btn-danger" href="?controller=Login&action=logout">Log out</a>
 
 
 

@@ -67,6 +67,7 @@
 
 
             <a id="home" class="btn btn-light" href="?controller=Note&action=getAllNotes">Back</a>
+            <a id="home" class="btn btn-danger" href="?controller=Login&action=logout">Log out</a>
 
 
             <!-- Button trigger modal -->
