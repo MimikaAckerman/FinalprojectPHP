@@ -8,8 +8,10 @@ class NoteController
 
     function getAllNotes()
     {
+        echo "Estoy en el controller <br>";
         $notes = $this->model->get();
         if (isset($notes)) {
+            echo "Hay respuesta de la base datos <br>";
             $this->view->data = $notes;
             $this->view->render("note/noteDashboard");
         }

@@ -7,15 +7,17 @@ class LoginController
 
     function login($request)
     {
+        echo "Estoy en loginController";
         $log = null;
 
         if (isset($request)) {
 
             $log = $this->model->login($request);
             if (isset($_SESSION['user'])) {
+                print_r($_SESSION['user']);
                 header("Location: index.php?controller=Note&action=getAllNotes");
             } else {
-                header("Location: ./");
+                header("Location: index.php");
             }
         }
     }

@@ -4,6 +4,7 @@ class NoteModel extends Model
 {
     function get()
     {
+        echo "Estoy en el model <br>";
         $query = $this->db->connect()->prepare("SELECT e.id, e.title, e.content, e.initial_date, e.final_date
         FROM notes e
         ORDER BY e.id ASC;");
