@@ -28,6 +28,7 @@
         Login
         <span class="underline"></span>
       </button>
+      
 	  <form id="form" method="post" action="?controller=Note&action=getAllNotes" class="form form-login">
         <fieldset>
           <legend>Please, enter your email and password for login.</legend>

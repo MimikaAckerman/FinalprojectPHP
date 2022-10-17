@@ -34,7 +34,7 @@
            
 
 
-            <!--ESTO ES EL CODIGO PHP-->
+            <!--CODE PHP-->
             <table class="table">
             
                 <thead>
@@ -80,7 +80,7 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 138vh;">
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 120vh;">
   Favorite notes
 </button>
 
