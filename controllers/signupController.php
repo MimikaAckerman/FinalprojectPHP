@@ -31,6 +31,7 @@ class signupController
         } else {
             $this->view->action = $request["action"];
             $this->view->render("signup/signup");
+            
         }
     }
 

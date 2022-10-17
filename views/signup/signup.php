@@ -13,6 +13,7 @@
         <h1>User's page!</h1>
         </br>
 
+       
 
         <form class="mb-5 needs-validation" action="index.php?controller=signup&action=<?php echo isset($this->data['id']) ? "updateUser" : "createUser" ?>" method="post">
             <input type="hidden" name="id" value="<?php echo isset($this->data['id']) ? $this->data['id'] : null ?>">

@@ -14,7 +14,7 @@ class signupModel extends Model
         $query->bindParam(2, $user["last_name"]);
         $query->bindParam(3, $user["email"]);
         $query->bindParam(4, $user["password"]);
-
+        
         try {
             $query->execute();
             return [true];
