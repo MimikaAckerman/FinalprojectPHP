@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <div class="container task_list_empty">
     
         <header>
