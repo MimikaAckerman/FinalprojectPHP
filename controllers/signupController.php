@@ -30,7 +30,8 @@ class signupController
             }
         } else {
             $this->view->action = $request["action"];
-            $this->view->render("signup/signup");
+            // $this->view->render("signup/signup");
+              $this->view->render("main/login");
             
         }
     }

@@ -19,8 +19,7 @@
         <input type="submit" value="Log In">
     </form> -->
 
-    		 <a id="home" class="btn btn-primary" href="?controller=signup&action=createUser">Sign Up</a>
-
+    		
     <div class="container-fluid">
         <div class="row main-content bg-success text-center">
             <div class="col-md-4 text-center company__info">
@@ -63,8 +62,7 @@
   <div class="container">
         <h1>User's page!</h1>
         </br>
-
-       
+      
 
         <form class="mb-5 needs-validation" action="index.php?controller=signup&action=<?php echo isset($this->data['id']) ? "updateUser" : "createUser" ?>" method="post">
             <input type="hidden" name="id" value="<?php echo isset($this->data['id']) ? $this->data['id'] : null ?>">

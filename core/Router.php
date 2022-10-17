@@ -9,7 +9,7 @@ class Router
             $controllerName = $_GET['controller'] . "Controller";
             $controllerPath = CONTROLLERS . $controllerName . ".php";
 
-            if (($controllerName === 'LoginController') && (!isset($_SESSION['user']))) {
+            if (($controllerName === 'LoginController') || ($controllerName === 'signupController') && (!isset($_SESSION['user']))) {
 
                 if (file_exists($controllerPath)) {
                     require_once($controllerPath);
