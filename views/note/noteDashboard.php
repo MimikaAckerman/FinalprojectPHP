@@ -19,11 +19,13 @@
 </head>
 
 <body>
+
     <div class="container task_list_empty">
+    
         <header>
-            <div class="theme_toogle">
+            <!-- <div class="theme_toogle">
                 <button class="theme_toogle_btn"></button>
-            </div>
+            </div> -->
             <span class="heading">My Day</span>
 
 
@@ -53,7 +55,7 @@
 
                         <a class='btn btn-secondary' href='?controller=Note&action=getNote&id=" . $note["id"] . "'>Edit</a>
                         <a class='btn btn-danger' href='?controller=Note&action=deleteNote&id=" . $note["id"] . "'>Delete</a>
-
+                        <a class='btn btn-secondary' href='?controller=Note&action=addFavNote&id=" . $note["id"] . "'>Add Fav.</a>
 
                         </td>";
 
@@ -76,27 +78,8 @@
 
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                Favorite notes
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit notes</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div> -->
-                        <div class="modal-body">
-                            <?php require_once "views/favNote/favNoteDashboard.php"?>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a type="button" href="?controller=favNote&action=getAllFavNotes" class="btn btn-primary">Favorite notes</a>
+            <a id="home" class="btn btn-danger" href="?controller=Login&action=logout">Log out</a>
 
 
 

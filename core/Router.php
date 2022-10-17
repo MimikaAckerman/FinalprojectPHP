@@ -8,9 +8,7 @@ class Router
         if (isset($_GET['controller'])) {
             $controllerName = $_GET['controller'] . "Controller";
             $controllerPath = CONTROLLERS . $controllerName . ".php";
-
             if (($controllerName === 'LoginController') && (!isset($_SESSION['user']))) {
-
                 if (file_exists($controllerPath)) {
                     require_once($controllerPath);
                     new $controllerName();
@@ -20,7 +18,6 @@ class Router
                 }
             } else if (isset($_SESSION['user'])) {
                 if (file_exists($controllerPath)) {
-
                     require_once($controllerPath);
                     new $controllerName();
                 } else {

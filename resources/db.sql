@@ -22,7 +22,7 @@ password VARCHAR(12) NOT NULL
 );
 
 CREATE TABLE favourites(
-id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+id INT(25) NOT NULL,
 title VARCHAR(25) NOT NULL,
 content VARCHAR(150) NOT NULL,
 initial_date VARCHAR(25),
@@ -44,9 +44,3 @@ VALUES
 ("Aitor", "Novoa", "AitorNovoa@gmail.com", 123456),
 ("Nerea", "Vergara", "NereaVergara@gmail.com", 123456),
 ("Bruno", "Perea", "BrunoPerea@hotmail.com", 123456);
-
-INSERT INTO favourites (title, content, initial_date, final_date)
-VALUES
-
-("Task", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "15-01-2022", "15-01-2022"),
-("Weekend", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "15-01-2022", "15-01-2022");

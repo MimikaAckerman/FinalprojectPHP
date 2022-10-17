@@ -5,6 +5,7 @@ class LoginModel extends Model
 
     function login($logged)
     {
+        print_r($logged);
         $emailU = $logged["user"];
         $passU = $logged["password"];
         $log = $this->db->connect()->prepare("SELECT e.email, e.password
@@ -14,7 +15,6 @@ class LoginModel extends Model
         try {
             $log->execute();
             $infoLog = $log->fetch();
-            print_r($infoLog);
 
             if (isset($infoLog['email']) && isset($infoLog['password'])) {
 

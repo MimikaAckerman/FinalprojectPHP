@@ -54,7 +54,6 @@ class favNoteModel extends Model
 
     function update($favNote)
     {
-        echo "update model";
         $query = $this->db->connect()->prepare("UPDATE favourites
         SET title = ?, content = ?, initial_date = ?, final_date = ?
         WHERE id = ?;");
