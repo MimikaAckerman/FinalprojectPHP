@@ -15,7 +15,7 @@ class LoginController
             if (isset($_SESSION['user'])) {
                 header("Location: index.php?controller=Note&action=getAllNotes");
             } else {
-                header("Location: index.php");
+                header("Location: ./");
             }
         }
     }
