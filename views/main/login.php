@@ -19,13 +19,15 @@
         <input type="submit" value="Log In">
     </form> -->
 
+    		 <a id="home" class="btn btn-primary" href="?controller=signup&action=createUser">Sign Up</a>
+
     <div class="container-fluid">
         <div class="row main-content bg-success text-center">
             <div class="col-md-4 text-center company__info">
                 <span class="company__logo">
                     <h1><i class="fa-sharp fa-solid fa-globe"></i></h1>
                 </span>
-                <h4 class="company_title">Go Travel</h4>
+                <h4 class="company_title">Goo Travel</h4>
             </div>
             <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
                 <div class="container-fluid">

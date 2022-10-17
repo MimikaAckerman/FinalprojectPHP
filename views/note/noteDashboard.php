@@ -21,6 +21,7 @@
 <body>
     <header>
         <a href="?controller=Login&action=logout">Log out</a>
+            		 <a id="home" class="btn btn-primary" href="?controller=signup&action=createUser">Sign Up</a>
 </header>
     <div class="container task_list_empty">
         <header>
