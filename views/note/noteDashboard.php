@@ -77,7 +77,7 @@
 
 
             <!-- Button trigger modal -->
-            <a type="button" href="?controller=favNote&action=getAllFavNotes" class="btn btn-primary">Favorite notes</a>
+            <a type="button" href="?controller=favNote&action=getAllFavNotes" class="btn btn-primary" style="margin-left: 137vh;">Favorite notes</a>
             <a id="home" class="btn btn-danger" href="?controller=Login&action=logout">Log out</a>
 
 

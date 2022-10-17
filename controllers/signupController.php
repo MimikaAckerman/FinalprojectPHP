@@ -6,7 +6,7 @@ class signupController
 
     /* ~~~ CONTROLLER METHODS ~~~ */
 
-        function getUser($request)
+    function getUser($request)
     {
         $user = null;
         if (isset($request["id"])) {
@@ -30,10 +30,7 @@ class signupController
             }
         } else {
             $this->view->action = $request["action"];
-            // $this->view->render("signup/signup");
-              $this->view->render("main/login");
-            
+            $this->view->render("main/login");
         }
     }
-
 }
