@@ -7,7 +7,6 @@ class LoginController
 
     function login($request)
     {
-        echo "Estoy en loginController";
         $log = null;
 
         if (isset($request)) {

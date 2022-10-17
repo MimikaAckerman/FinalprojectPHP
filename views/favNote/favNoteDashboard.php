@@ -39,7 +39,7 @@
                     <?php
                     foreach ($this->data as $index => $favNote) {
                         echo "<tr>";
-                        /*     echo "<td class='tg-0lax'>" . $favNote["id"] . "</td>"; */
+                        echo "<td class='tg-0lax'>" . $favNote["id"] . "</td>";
                         echo "<td class='tg-0lax'>" . $favNote["title"] . "</td>";
                         echo "<td class='tg-0lax'>" . $favNote["content"] . "</td>";
                         echo "<td class='tg-0lax'>" . $favNote["initial_date"] . "</td>";

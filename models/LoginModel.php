@@ -15,8 +15,6 @@ class LoginModel extends Model
         try {
             $log->execute();
             $infoLog = $log->fetch();
-            echo "HOLAAAAAAAAAA";
-            print_r($infoLog);
 
             if (isset($infoLog['email']) && isset($infoLog['password'])) {
 

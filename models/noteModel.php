@@ -4,7 +4,6 @@ class NoteModel extends Model
 {
     function get()
     {
-        echo "Estoy en el model <br>";
         $query = $this->db->connect()->prepare("SELECT e.id, e.title, e.content, e.initial_date, e.final_date
         FROM notes e
         ORDER BY e.id ASC;");
@@ -33,6 +32,20 @@ class NoteModel extends Model
         }
     }
 
+    function addFav($note){
+        $query = $this->db->connect()->prepare("INSERT INTO favourites (id, title, content, initial_date, final_date)
+        SELECT id, title, content, initial_date, final_date
+        FROM notes
+        WHERE id = $note;");
+
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
+
     function create($note)
     {
         $query = $this->db->connect()->prepare("INSERT INTO notes (title, content, initial_date, final_date)
@@ -51,6 +64,8 @@ class NoteModel extends Model
             return [false, $e];
         }
     }
+
+    
 
     function update($note)
     {

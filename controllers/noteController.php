@@ -8,10 +8,8 @@ class NoteController
 
     function getAllNotes()
     {
-        echo "Estoy en el controller <br>";
         $notes = $this->model->get();
         if (isset($notes)) {
-            echo "Hay respuesta de la base datos <br>";
             $this->view->data = $notes;
             $this->view->render("note/noteDashboard");
         }
@@ -26,7 +24,20 @@ class NoteController
 
         $this->view->action = $request["action"];
         $this->view->data = $note;
+        print_r($note);
         $this->view->render("note/note");
+    }
+
+    function addFavNote($request)
+    {
+        $note = null;
+        if (isset($request["id"])) {
+            $note = $this->model->addFav($request["id"]);
+        }
+
+        $this->view->action = $request["action"];
+        $this->view->data = $note;
+        header("Location: index.php?controller=favNote&action=getAllFavNotes");
     }
 
     function createNote($request)
@@ -44,6 +55,7 @@ class NoteController
             $this->view->render("note/note");
         }
     }
+
 
     function updateNote($request)
     {

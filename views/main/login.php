@@ -21,7 +21,7 @@
                     Login
                     <span class="underline"></span>
                 </button>
-                <form id="form" method="post" action="?controller=Note&action=getAllNotes" class="form form-login">
+                <form id="form" method="post" action="?controller=Login&action=login" class="form form-login">
                     <fieldset>
                         <legend>Please, enter your email and password for login.</legend>
                         <div class="input-block">
@@ -36,40 +36,32 @@
                     <input type="submit" value="Log In" class="btn-login">
                 </form>
             </div>
-        </div>
+            <div class="form-wrapper">
+                <button type="button" class="switcher switcher-signup">
+                    Sign Up
+                    <span class="underline"></span>
+                </button>
+                <form class="form form-signup">
+                    <fieldset>
+                        <legend>Please, enter your email, password and password confirmation for sign up.</legend>
+                        <div class="input-block">
+                            <label for="signup-email">E-mail</label>
+                            <input id="signup-email" type="email" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password">Password</label>
+                            <input id="signup-password" type="password" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="signup-password-confirm">Confirm password</label>
+                            <input id="signup-password-confirm" type="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn-signup">Continue</button>
+                </form>
+            </div>
     </section>
 
-
-
-                        <!-- <div class="col-md-8 col-xs-12 col-sm-12 login_form ">
-                            <div class="container-fluid">
-                                <div class="row py-2">
-                                    <h2>Log In</h2>
-                                </div>
-                                PAGE PHP
-                                <div class="row">
-                                    <form id="form" method="post" action="?controller=Login&action=login">
-                                        <div class="row">
-                                            <label for="user">Email</label>
-                                            <input type="email" name="user" id="user" class="form__input" placeholder="Enter your email...">
-                                        </div>
-                                        <div class="row">
-                                            <label for="password">Password</label>
-                                            <input type="password" name="password" id="password" class="form__input" placeholder="Enter your password...">
-                                        </div>
-                                        <div class="row">
-                                <input type="checkbox" name="remember_me" id="remember_me" class="">
-                                <label for="remember_me">Remember Me!</label>
-                            </div>
-                                        <div class="row d-flex justify-content-center">
-                                            <input type="submit" value="Log In" class="btn">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-            </div>
-    </section> -->
 </body>
 
 </html>
