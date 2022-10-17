@@ -21,9 +21,9 @@
 <body>
     <div class="container task_list_empty">
         <header>
-            <div class="theme_toogle">
+            <!-- <div class="theme_toogle">
                 <button class="theme_toogle_btn"></button>
-            </div>
+            </div> -->
             <span class="heading">My Day</span>
 
 
