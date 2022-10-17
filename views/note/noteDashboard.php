@@ -19,6 +19,9 @@
 </head>
 
 <body>
+    <header>
+        <a href="?controller=Login&action=logout">Log out</a>
+</header>
     <div class="container task_list_empty">
         <header>
             <div class="theme_toogle">
