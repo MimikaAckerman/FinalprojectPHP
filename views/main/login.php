@@ -8,17 +8,27 @@
     <title>Log in TODO List</title>
     
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
-    <script src="assets/js/utils.js" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
-</head>
+    
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+    <script src="assets/js/utils.js" defer></script>
+
+
+
+
+
+</head>
 <body>
 
 
     <section class="forms-section">
-        <h1 class="section-title">WELCOME USER</h1>
+  
         <div class="forms">
             <div class="form-wrapper is-active">
                 <button type="button" class="switcher switcher-login">
@@ -74,11 +84,20 @@
 
 
     <ul>
-        <li><a href="https://www.facebook.com/assemblerinstitute/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href="https://www.youtube.com/c/AssemblerInstituteofTechnology"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-        <li><a href="https://www.linkedin.com/school/assembler-institute-technology/?originalSubdomain=es"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li><a href="https://www.instagram.com/assemblerinstitute/?hl=ha-nlink"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li>
+          <a href="https://www.facebook.com/assemblerinstitute/">
+            <i class="fab fa-facebook-f icon"></i>    </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/c/AssemblerInstituteofTechnology"><i class="fab fa-youtube icon"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/school/assembler-institute-technology/?originalSubdomain=es"><i class="fab fa-linkedin-in icon"></i></a></li>
+        <li>
+          <a href="https://www.instagram.com/assemblerinstitute/?hl=ha-ng"><i class="fab fa-instagram icon"></i></a></li>
       </ul>
+      
+      
 
 </body>
 
@@ -97,7 +116,6 @@
 
 
 
-	<!--JS -->
-	<script src="assets/js/utils.js"></script>
+
 </body>
 </html>
