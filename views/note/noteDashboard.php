@@ -14,12 +14,65 @@
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <script></script>
+    <script src="assets/js/utils.js" defer></script>
 
 
 </head>
 
 <body>
+
+<!-- Pomodoro Container -->
+<div class="pomodoro-container">
+
+    <!-- Session -->
+    <div class="pomodoro-item">
+        <div id="labelSessionBreak" class="label">Session</div>
+        <div class="row-pomodoro">
+            <div id="timeLeft">25:00</div>
+        </div>
+    </div>
+
+    <!-- Session Length -->
+    <div class="pomodoro-item">
+        <div class="label">Session Length</div>
+        <div class="row-pomodoro">
+            <button id="sessionDecrement" class="btn-updown">-</button>
+            <div id="sessionLength" class="row-pomodoro lengthTime">25</div>
+            <button id="sessionIncrement" class="btn-updown">+</button>
+        </div>
+    </div>
+
+    <!-- Break Length -->
+    <div class="pomodoro-item">
+        <div class="label">Break Length</div>
+        <div class="row-pomodoro">
+            <button id="breakDecrement" class="btn-updown">-</button>
+            <div id="breakLength" class="row-pomodoro lengthTime">5</div>
+            <button id="breakIncrement" class="btn-updown">+</button>
+        </div>
+    </div>
+    
+    <!-- Play/Pause/Reset -->
+    <div class="pomodoro-item playerButton">
+        <div class="row-pomodoro buttonRow">
+            <button id="buttonPlay" class="btn-controller">
+                <i id="playIcon" class="fas fa-play" aria-hidden="true">play</i>
+            </button>
+            <button id="buttonReset" class="btn-controller"> 
+                <i class="fas fa-sync" aria-hidden="true">reset</i>
+            </button>
+        </div>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+
 
 
 
