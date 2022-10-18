@@ -7,6 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
+<header>
+        <a href="?controller=Login&action=logout">Log out</a>
+</header>
 
 <body>
     <h1>User Dashboard page!</h1>

@@ -13,14 +13,9 @@
         <h1>User's page!</h1>
         </br>
 
-        <?php
-        if ($this->action == "getUser" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
-            echo "<p>The user does not exists!</p>";
-        } else if (isset($error)) {
-            echo "<p>$error</p>";
-        }
-        ?>
-        <form class="mb-5 needs-validation" action="index.php?controller=User&action=<?php echo isset($this->data['id']) ? "updateUser" : "createUser" ?>" method="post">
+       
+
+        <form class="mb-5 needs-validation" action="index.php?controller=signup&action=<?php echo isset($this->data['id']) ? "updateUser" : "createUser" ?>" method="post">
             <input type="hidden" name="id" value="<?php echo isset($this->data['id']) ? $this->data['id'] : null ?>">
             <div class="form-row">
                 <div class="col">

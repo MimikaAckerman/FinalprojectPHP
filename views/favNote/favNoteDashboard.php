@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO-list</title>
+<<<<<<< HEAD
 
     <link rel="stylesheet" href="assets/css/noteDashboard.css" />
     <!-- CSS only -->
@@ -16,6 +17,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 
+=======
+    <link rel="stylesheet" href="assets/css/noteDashboard.css" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+>>>>>>> jc
 </head>
 
 <body>
@@ -24,7 +32,11 @@
             <div class="theme_toogle">
                 <button class="theme_toogle_btn"></button>
             </div>
+<<<<<<< HEAD
             <span class="heading">My Day</span>
+=======
+            <span class="heading">Favorites</span>
+>>>>>>> jc
 
 
 
@@ -44,14 +56,26 @@
                     <?php
                     foreach ($this->data as $index => $favNote) {
                         echo "<tr>";
+<<<<<<< HEAD
                         /*     echo "<td class='tg-0lax'>" . $favNote["id"] . "</td>"; */
+=======
+                        echo "<td class='tg-0lax'>" . $favNote["id"] . "</td>";
+>>>>>>> jc
                         echo "<td class='tg-0lax'>" . $favNote["title"] . "</td>";
                         echo "<td class='tg-0lax'>" . $favNote["content"] . "</td>";
                         echo "<td class='tg-0lax'>" . $favNote["initial_date"] . "</td>";
                         echo "<td class='tg-0lax'>" . $favNote["final_date"] . "</td>";
                         echo "<td colspan='2' class='tg-0lax'>
+<<<<<<< HEAD
                         <a class='btn btn-secondary' href='?controller=favNote&action=getFavNote&id=" . $favNote["id"] . "'>Edit</a>
                         <a class='btn btn-danger' href='?controller=FavNote&action=deleteFavNote&id=" . $favNote["id"] . "'>Delete</a>
+=======
+
+                        <a class='btn btn-secondary' href='?controller=favNote&action=getFavNote&id=" . $favNote["id"] . "'>Edit</a>
+                        <a class='btn btn-danger' href='?controller=FavNote&action=deleteFavNote&id=" . $favNote["id"] . "'>Delete</a>
+
+
+>>>>>>> jc
                         </td>";
 
                         echo "</tr>";
@@ -68,8 +92,17 @@
         <footer>
 
 
+<<<<<<< HEAD
             <a id="home" class="btn btn-light" href="?controller=FavNote&action=createFavNote">Create</a>
             <a id="home" class="btn btn-light" href="./">Back</a>
+=======
+            <a id="home" class="btn btn-light" href="?controller=Note&action=getAllNotes">Back</a>
+            <a id="home" class="btn btn-danger" href="?controller=Login&action=logout">Log out</a>
+
+
+            <!-- Button trigger modal -->
+            <!-- <a type="button" href="?controller=Note&action=getAllNotes" class="btn btn-primary">Notes</a> -->
+>>>>>>> jc
 
 
 

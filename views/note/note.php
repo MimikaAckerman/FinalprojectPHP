@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<<<<<<< HEAD
 
 
 <!-- CSS only -->
@@ -23,6 +24,8 @@
 
 
 
+=======
+>>>>>>> jc
 </head>
 
 <body>
@@ -30,6 +33,7 @@
         <h1>Note's page!</h1>
         </br>
 
+<<<<<<< HEAD
 
 
 <!-- Button trigger modal -->
@@ -69,6 +73,8 @@
 
 
 
+=======
+>>>>>>> jc
         <?php
         if ($this->action == "getNote" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
             echo "<p>The note does not exists!</p>";
@@ -81,11 +87,21 @@
             <div class="form-row">
                 <div class="col">
                     <div class="form-group">
+<<<<<<< HEAD
                         <label for="name">Title</label>
                         <input required type="text" value="<?php echo isset($this->data['name']) ? $this->data['title'] : null ?>" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title">
                     </div>
 
                 </div>
+=======
+                        <label for="title">Title</label>
+                        <input required type="text" value="<?php echo isset($this->data['title']) ? $this->data['title'] : null ?>" class="form-control" id="title" name="title" aria-describedby="title" placeholder="Enter title">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+>>>>>>> jc
                 <div class="col">
                     <div class="form-group">
                         <label for="content">Content</label>
@@ -99,7 +115,10 @@
                     <div class="form-group">
                         <label for="exampleInputInitialDate1">Initial date</label>
                         <input required type="text" value="<?php echo isset($this->data['initial_date']) ? $this->data['initial_date'] : null ?>" class="form-control" id="initial_date" name="initial_date" aria-describedby="initial_dateHelp" placeholder="Enter initial date">
+<<<<<<< HEAD
                         <small id="initial_dateHelp" class="form-text text-muted">We'll never share your initial date with anyone else.</small>
+=======
+>>>>>>> jc
                     </div>
                 </div>
             </div>
@@ -114,11 +133,14 @@
             </div>
 
 
+<<<<<<< HEAD
 
 
 
 
             
+=======
+>>>>>>> jc
             <button type="submit" class="btn btn-primary">Submit</button>
             <a id="return" class="btn btn-secondary" href="<?php echo "?controller=note&action=getAllNotes&action=getAllNotes"; ?>">Return</a>
         </form>

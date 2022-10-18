@@ -52,7 +52,11 @@ class FavNoteController
                 header("Location: index.php?controller=FavNote&action=getAllFavNotes");
             } else {
                 $this->action = $request["action"];
+<<<<<<< HEAD
                 $this->error = "The data entered is incorrect, check that there is no other hobbie with that name.";
+=======
+                $this->error = "The data entered is incorrect, check that there is no other note with that name.";
+>>>>>>> jc
                 $this->view->render("favNote/favNote");
             }
         } else {
@@ -66,7 +70,11 @@ class FavNoteController
         $favNote = null;
         if (isset($request["id"])) {
             $favNote = $this->model->delete($request["id"]);
+<<<<<<< HEAD
             header("Location: index.php?controller=FavNote&action=getAllFavNotes");
+=======
+            header("Location: index.php?controller=favNote&action=getAllFavNotes");
+>>>>>>> jc
         }
     }
 }
