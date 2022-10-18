@@ -6,10 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in TODO List</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
-    <script src="assets/js/utils.js" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'> 
+
+<!--CSS -->
+<link rel="stylesheet" type="text/css" href="./assets/css/login.css">
+ <!-- CSS only -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+     
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+<!--JS -->
+<script src="assets/js/utils.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>  --
+
+
+
+
+
 </head>
 
 <body>
@@ -70,7 +85,19 @@
             </div>
     </section>
 
-
+    <ul>
+        <li>
+          <a href="https://www.facebook.com/assemblerinstitute/">
+            <i class="fab fa-facebook-f icon"></i>    </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/c/AssemblerInstituteofTechnology"><i class="fab fa-youtube icon"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/school/assembler-institute-technology/?originalSubdomain=es"><i class="fab fa-linkedin-in icon"></i></a></li>
+        <li>
+          <a href="https://www.instagram.com/assemblerinstitute/?hl=ha-ng"><i class="fab fa-instagram icon"></i></a></li>
+      </ul>
 
 
 </body>
