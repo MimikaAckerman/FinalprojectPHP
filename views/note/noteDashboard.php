@@ -65,7 +65,7 @@
         <footer>
 
             <a id="home" class="btn btn-light" href="?controller=Note&action=createNote">Create</a>
-            <a id="home" class="btn btn-light" href="./">Back</a>
+            <a id="home" class="btn btn-light" href="?controller=Login&action=logout">Back</a>
 
             <a type="button" href="?controller=favNote&action=getAllFavNotes" class="btn btn-primary btn-fav">Favorite notes</a>
             <a id="home" class="btn btn-danger" href="?controller=Login&action=logout">Log out</a>
