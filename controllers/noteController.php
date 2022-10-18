@@ -27,6 +27,18 @@ class NoteController
         $this->view->render("note/note");
     }
 
+    function addFavNote($request)
+    {
+        $note = null;
+        if (isset($request["id"])) {
+            $note = $this->model->addFav($request["id"]);
+        }
+
+        $this->view->action = $request["action"];
+        $this->view->data = $note;
+        header("Location: index.php?controller=favNote&action=getAllFavNotes");
+    }
+
     function createNote($request)
     {
         if (sizeof($_POST) > 0) {
@@ -42,6 +54,7 @@ class NoteController
             $this->view->render("note/note");
         }
     }
+
 
     function updateNote($request)
     {

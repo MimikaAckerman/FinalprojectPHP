@@ -1,29 +1,25 @@
-
 <?php
-  require 'config/db.php';
 
-class signInModel extends model
+class signupModel extends Model
 {
-    function signInModel($logged){
 
-        $message = '';
-  
-        if(!empty($_POST['email']) && !empty($_POST['password'])){
-            $sql = "INSERT INTO users (email,password) VALUES (:email,:password)";
-            $stmt = $conn -> prepare($sql);
-            $stmt -> bindParam(':email',$_POST['email']);
-            $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
-            $stmt -> bindParam(':password',$password);
+
+    function create($user)
+    {
+        $query = $this->db->connect()->prepare("INSERT INTO users (name, last_name, email, password)
+        VALUES
+        (?, ?, ?, ?);");
+
+        $query->bindParam(1, $user["name"]);
+        $query->bindParam(2, $user["last_name"]);
+        $query->bindParam(3, $user["email"]);
+        $query->bindParam(4, $user["password"]);
         
-        
-            if($stmt -> execute()){
-                $message = 'successfully created new user';
-            }else{
-                $message = 'sorry there must have been an issue creating your account';
-            }
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
     }
 }
-
-  }
-    
-?>

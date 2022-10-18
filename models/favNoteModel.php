@@ -1,6 +1,6 @@
 <?php
 
-class favouritesModel extends Model
+class favNoteModel extends Model
 {
     function get()
     {
@@ -10,8 +10,8 @@ class favouritesModel extends Model
 
         try {
             $query->execute();
-            $favourites = $query->fetchAll();
-            return $favourites;
+            $favNote = $query->fetchAll();
+            return $favNote;
         } catch (PDOException $e) {
             return [];
         }
@@ -26,23 +26,23 @@ class favouritesModel extends Model
 
         try {
             $query->execute();
-            $favourites = $query->fetch();
-            return $favourites;
+            $favNote = $query->fetch();
+            return $favNote;
         } catch (PDOException $e) {
             return [];
         }
     }
 
-    function create($favourites)
+    function create($favNote)
     {
-        $query = $this->db->connect()->prepare("INSERT favourites (title, content, initial_date, final_date)
+        $query = $this->db->connect()->prepare("INSERT favourites (title, content, fecha_inicio, fecha_final)
         VALUES
         (?, ?, ?, ?);");
 
-            $query->bindParam(1, $favourites["title"]);
-            $query->bindParam(2, $favourites["content"]);
-            $query->bindParam(3, $favourites["initial_date"]);
-            $query->bindParam(4, $favourites["final_date"]);
+            $query->bindParam(1, $favNote["title"]);
+            $query->bindParam(2, $favNote["content"]);
+            $query->bindParam(3, $favNote["fecha_inicio"]);
+            $query->bindParam(4, $favNote["fecha_final"]);
 
         try {
             $query->execute();
@@ -52,18 +52,17 @@ class favouritesModel extends Model
         }
     }
 
-    function update($favourites)
+    function update($favNote)
     {
-        echo "update model";
         $query = $this->db->connect()->prepare("UPDATE favourites
         SET title = ?, content = ?, initial_date = ?, final_date = ?
         WHERE id = ?;");
 
-            $query->bindParam(1, $favourites["title"]);
-            $query->bindParam(2, $favourites["content"]);
-            $query->bindParam(3, $favourites["initial_date"]);
-            $query->bindParam(4, $favourites["final_date"]);
-            $query->bindParam(5, $favourites["id"]);
+            $query->bindParam(1, $favNote["title"]);
+            $query->bindParam(2, $favNote["content"]);
+            $query->bindParam(3, $favNote["initial_date"]);
+            $query->bindParam(4, $favNote["final_date"]);
+            $query->bindParam(5, $favNote["id"]);
 
         try {
             $query->execute();
