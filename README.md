@@ -358,9 +358,14 @@ This will be the file that shows all the records of the database.
 </html>
 ```
 ### 6.2. `./views/signup/signup.php`
+this file is the one that will allow the user to register through this form.
 
 
+### 6.3 ./views/user/user.php
+this file contains the function for creating users in the sign up.
 
+#### 7 ./Index.php
+in this file where we will have all the paths of the files that perform the functions of the
 
 
 
