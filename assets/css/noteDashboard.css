@@ -19,7 +19,8 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
+    background-image:url("https://thumbs.gfycat.com/BigLateFirecrest-size_restricted.gif");
+    background-size: cover;
 
 
 
@@ -228,8 +229,4 @@ footer form {
         margin-right: 20px;
     }
 }
-
-
-
-
 
