@@ -24,11 +24,6 @@ class NoteController
 
         $this->view->action = $request["action"];
         $this->view->data = $note;
-<<<<<<< HEAD
-        $this->view->render("note/note");
-    }
-
-=======
         print_r($note);
         $this->view->render("note/note");
     }

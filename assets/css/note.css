@@ -4,12 +4,9 @@
     --text-color: black;
     --task-color: white;
     --footer-color: #1e1e1e;
-<<<<<<< HEAD
-=======
     --theme-btn: url("assets/Dark-theme-btn.svg");
     --container-bg: url("./assets/Light-empty.svg");
     --complete-icon: url("assets/complete.svg");
->>>>>>> jc
     --filter: none;
     --theme-transition: 0s;
 }
@@ -25,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: #b6b8be;
 }
 
 .container {
@@ -48,13 +46,6 @@ header {
 main {
     display: flex;
     flex-direction: column;
-}
-
-.btn-fav {
-    margin-left: 137vh;
-}
-.btn-logout {
-    margin-left: 165vh;
 }
 
 .heading {
@@ -208,10 +199,7 @@ footer form {
     visibility: hidden;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> jc
 @media screen and (max-width: 600px) {
     body {
         margin: 0px;
@@ -237,11 +225,3 @@ footer form {
         margin-right: 20px;
     }
 }
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> jc

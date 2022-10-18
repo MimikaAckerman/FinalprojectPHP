@@ -81,6 +81,7 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="./assets/css/login.css">
     <script src="assets/js/utils.js" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 </head>
 
 <body>
@@ -136,7 +137,7 @@
                             <input type="password" value="<?php echo isset($this->data['password']) ? $this->data['password'] : null ?>" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="Enter password">
                         </div>
                     </fieldset>
-                    <button type="submit" class="btn-signup">Continue</button>
+                    <button type="submit" class="btn-signup" onclick="myFunc()">Continue</button>
                 </form>
             </div>
     </section>
