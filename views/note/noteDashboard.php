@@ -20,7 +20,6 @@
 
 <body>
     <div class="container task_list_empty">
-    
         <header>
             <!-- <div class="theme_toogle">
                 <button class="theme_toogle_btn"></button>
