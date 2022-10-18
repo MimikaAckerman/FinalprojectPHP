@@ -153,7 +153,7 @@ This is the main view that is loaded only if the user doesn't specify any contro
 <body>
     <h1>Welcome to MVC Pattern Basics!</h1>
     <div class="list-group">
-        <a class="list-group-item list-group-item-action" href="?controller=employee&action=getAllEmployees">Employee Controller</a>
+        <a class="list-group-item list-group-item-action" href="?controller=note&action=getAllNotes">Note Controller</a>
 </body>
 
 </html>
@@ -183,14 +183,14 @@ This view will be always loaded when the user specifies a bad parameter. As you 
 
 > This are the PHP files that are called in the [index.php](./index.php) file. Here we will implement the functionalities of each controller.
 
-### `./controllers/employeeController.php`
+### `./controllers/noteController.php`
 
 Before we start, we need to require the model, that will be responsible of calling the database queries to obtain or modify the information. We will create the model later.
 
 ```php
 <?php
 
-require_once MODELS . "employeeModel.php";
+require_once MODELS . "noteModel.php";
 ```
 
 Now, we know that this is the controller that the user wants to load, but we also need to know which function to execute.
@@ -209,16 +209,16 @@ if (function_exists($action)) {
 }
 ```
 
-We are going to create the `getAllEmployees` function, as you can see, there is a `get()` function that is not created yet, this is a function of the model that we will create in the following step.
+We are going to create the `getAllNotes` function, as you can see, there is a `get()` function that is not created yet, this is a function of the model that we will create in the following step.
 
 ```php
 /* ~~~ CONTROLLER FUNCTIONS ~~~ */
 
-function getAllEmployees()
+function getAllNotes()
 {
-    $employees = get();
-    if (isset($employees)) {
-        require_once VIEWS . "/employee/employeeDashboard.php";
+    $notes = get();
+    if (isset($notes)) {
+        require_once VIEWS . "/note/noteDashboard.php";
     } else {
         error("There is a database error, try again.");
     }
@@ -269,7 +269,7 @@ function conn()
 }
 ```
 
-### 5.2. `./models/employeeModel.php`
+### 5.2. `./models/noteModel.php`
 
 First, we must require the previous database connection file in order to execute the database queries.
 
@@ -277,20 +277,20 @@ First, we must require the previous database connection file in order to execute
 require_once("helper/dbConnection.php");
 ```
 
-In this model we will create the `get` function that we are executing in the `employeeController.php`.
+In this model we will create the `get` function that we are executing in the `noteController.php`.
 
 ```php
 function get()
 {
     $query = conn()->prepare("SELECT e.id, e.name, e.email, g.name as 'gender', e.city, e.age, e.phone_number
-    FROM employees e
+    FROM notes e
     INNER JOIN genders g ON e.gender_id = g.id
     ORDER BY e.id ASC;");
 
     try {
         $query->execute();
-        $employees = $query->fetchAll();
-        return $employees;
+        $notes = $query->fetchAll();
+        return $notes;
     } catch (PDOException $e) {
         return [];
     }
@@ -301,7 +301,7 @@ function get()
 
 > View are the frontend part of the MVC pattern. Inside them we should create all the necessary code to show the information to the user.
 
-### 6.1. `./views/employee/employeeDashboard.php`
+### 6.1. `./views/note/noteDashboard.php`
 
 This will be the file that shows all the records of the database.
 
@@ -317,7 +317,7 @@ This will be the file that shows all the records of the database.
 </head>
 
 <body>
-    <h1>Employee Dashboard page!</h1>
+    <h1>Note Dashboard page!</h1>
     <style type="text/css">
 
     </style>
@@ -336,25 +336,25 @@ This will be the file that shows all the records of the database.
         </thead>
         <tbody>
             <?php
-            foreach ($employees as $index => $employee) {
+            foreach ($notes as $index => $note) {
                 echo "<tr>";
-                echo "<td class='tg-0lax'>" . $employee["id"] . "</td>";
-                echo "<td class='tg-0lax'>" . $employee["name"] . "</td>";
-                echo "<td class='tg-0lax'>" . $employee["email"] . "</td>";
-                echo "<td class='tg-0lax'>" . $employee["gender"] . "</td>";
-                echo "<td class='tg-0lax'>" . $employee["city"] . "</td>";
-                echo "<td class='tg-0lax'>" . $employee["age"] . "</td>";
-                echo "<td class='tg-0lax'>" . $employee["phone_number"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["id"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["name"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["email"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["gender"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["city"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["age"] . "</td>";
+                echo "<td class='tg-0lax'>" . $note["phone_number"] . "</td>";
                 echo "<td colspan='2' class='tg-0lax'>
-                <a class='btn btn-secondary' href='?controller=employee&action=getEmployee&id=" . $employee["id"] . "'>Edit</a>
-                <a class='btn btn-danger' href='?controller=employee&action=deleteEmployee&id=" . $employee["id"] . "'>Delete</a>
+                <a class='btn btn-secondary' href='?controller=note&action=getNote&id=" . $note["id"] . "'>Edit</a>
+                <a class='btn btn-danger' href='?controller=note&action=deleteNote&id=" . $note["id"] . "'>Delete</a>
                 </td>";
                 echo "</tr>";
             }
             ?>
         </tbody>
     </table>
-    <a id="home" class="btn btn-primary" href="?controller=employee&action=createEmployee">Create</a>
+    <a id="home" class="btn btn-primary" href="?controller=note&action=createNote">Create</a>
     <a id="home" class="btn btn-secondary" href="./">Back</a>
 </body>
 </html>

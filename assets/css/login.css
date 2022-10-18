@@ -7,7 +7,9 @@
 body {
 	margin: 0;
 	font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Verdana, sans-serif;
-	background: #b6b8be;
+	background-image: url(https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bG9naW58ZW58MHx8MHx8&w=1000&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .forms-section {
@@ -20,7 +22,7 @@ body {
 .section-title {
 	font-size: 32px;
 	letter-spacing: 1px;
-	color: rgb(36, 36, 36);
+	color: rgb(255, 255, 255);
 }
 
 .forms {
@@ -66,7 +68,7 @@ body {
 	font-family: inherit;
 	font-size: 16px;
 	letter-spacing: .5px;
-	color: rgb(12, 12, 12);
+	color: rgb(255, 255, 255);
 	background-color: transparent;
 	border: none;
 	outline: none;
@@ -75,12 +77,12 @@ body {
 }
 
 .form-wrapper.is-active .switcher-login {
-	color: rgb(23, 23, 23);
+	color: rgb(255, 255, 255);
 	transform: translateX(90px);
 }
 
 .form-wrapper.is-active .switcher-signup {
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	transform: translateX(-90px);
 }
 
