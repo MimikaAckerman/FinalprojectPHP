@@ -12,7 +12,7 @@
 }
 
 * {
-    font-family: "Times New Roman";
+    font-family: Roboto, -apple-system, 'Helvetica Neue', 'Segoe UI', Verdana, sans-serif;
     outline: none;
 }
 
@@ -49,10 +49,10 @@ main {
 }
 
 .btn-fav {
-    margin-left: 137vh;
+    margin-left: 130vh;
 }
 .btn-logout {
-    margin-left: 165vh;
+    margin-left: 160vh;
 }
 
 .heading {
