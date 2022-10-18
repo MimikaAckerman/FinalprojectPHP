@@ -4,6 +4,9 @@
     --text-color: black;
     --task-color: white;
     --footer-color: #1e1e1e;
+    --theme-btn: url("assets/Dark-theme-btn.svg");
+    --container-bg: url("./assets/Light-empty.svg");
+    --complete-icon: url("assets/complete.svg");
     --filter: none;
     --theme-transition: 0s;
 }
@@ -19,8 +22,9 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    
+    background: #b6b8be;
 }
+
 .container {
     position: relative;
     border: 4px var(--footer-color) solid;
@@ -39,9 +43,40 @@ header {
     display: flex;
     flex-direction: column;
 }
+main {
+    display: flex;
+    flex-direction: column;
+}
 
+.heading {
+    font-weight: 900;
+    color: var(--text-color);
+}
 
+.theme_toogle {
+    text-align: right;
+    margin-right: -15px;
+}
 
+.theme_toogle_btn {
+    min-width: 30px;
+    min-height: 30px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-image: var(--theme-btn);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.theme_toogle_btn:hover {
+    background-size: 85%;
+    transition: 0.5s;
+    transform: rotate(90deg);
+}
 
 .heading {
     font-size: 30px;
@@ -115,4 +150,78 @@ header {
     text-decoration: line-through;
     color: rgb(150, 150, 150);
     opacity: 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0px;
+    padding: 15px 10px;
+    min-width: 100%;
+    background-color: var(--footer-color);
+    left: 0px;
+    border: 5px var(--footer-color) solid;
+}
+
+footer form {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+}
+
+#new_task_input {
+    min-width: 250px;
+    margin-right: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px rgba(255, 255, 255, 0.267) solid;
+}
+
+#new_task_input::placeholder {
+    color: rgba(255, 255, 255, 0.589);
+    font-size: 20px;
+    font-family: "Times New Roman";
+}
+
+#new_task_input_btn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    background-image: url("./assets/new.svg");
+    background-repeat: no-repeat;
+    background-size: 80%;
+    cursor: pointer;
+}
+
+.taskCompleted {
+    visibility: hidden;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0px;
+        padding: 0px;
+        align-items: flex-start;
+        height: 100vh;
+        background-color: var(--bg-color);
+    }
+
+    .theme_toogle {
+        margin-top: 30px;
+    }
+
+    .container {
+        border: none;
+        border-radius: 0px;
+        width: 100%;
+        height: 93vh;
+        padding: 0px 20px;
+    }
+
+    #new_task_input {
+        margin-right: 20px;
+    }
 }

@@ -22,6 +22,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: #b6b8be;
 }
 
 .container {
@@ -41,6 +42,17 @@ body {
 header {
     display: flex;
     flex-direction: column;
+}
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-fav {
+    margin-left: 137vh;
+}
+.btn-logout {
+    margin-left: 165vh;
 }
 
 .heading {
