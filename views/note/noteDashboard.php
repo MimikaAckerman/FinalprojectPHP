@@ -54,7 +54,7 @@
 
                         <a class='btn btn-secondary' href='?controller=Note&action=getNote&id=" . $note["id"] . "'>Edit</a>
                         <a class='btn btn-danger' href='?controller=Note&action=deleteNote&id=" . $note["id"] . "'>Delete</a>
-                        <a class='btn btn-secondary' href='?controller=Note&action=addFavNote&id=" . $note["id"] . "'>Add Fav.</a>
+                        <a class='btn btn-success' href='?controller=Note&action=addFavNote&id=" . $note["id"] . "'>Add Fav.</a>
 
                         </td>";
 
