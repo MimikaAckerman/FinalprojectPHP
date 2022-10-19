@@ -24,7 +24,7 @@ In this workshop you will learn how to create a project using MVC Pattern withou
 First of all, you will need to clone this repo:
 
 ```bash
-$ git clone https://github.com/assembler-school/repository-name
+$ git clone https://github.com/MimikaAckerman/FinalprojectPHP.git
 ```
 
 ## Dependencies
