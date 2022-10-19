@@ -90,7 +90,7 @@ define("RESOURCES", BASE_PATH . '/resources/');
 <?php
 
 define('HOST', 'localhost');
-define('DB', 'mvc_basics');
+define('DB', 'todolist');
 define('USER', 'root');
 define('PASSWORD', '');
 define('CHARSET', 'utf8mb4');
@@ -126,7 +126,7 @@ if (isset($_GET['controller'])) {
         require_once VIEWS . "error/error.php";
     }
 } else {
-    require_once VIEWS . "main/main.php";
+    require_once VIEWS . "main/login.php";
 }
 
 ```
@@ -327,7 +327,6 @@ This will be the file that shows all the records of the database.
                 <th class="tg-0lax">Content</th>
                 <th class="tg-0lax">Initial date</th>
                 <th class="tg-0lax">Final date</th>
-                
             </tr>
         </thead>
         <tbody>
