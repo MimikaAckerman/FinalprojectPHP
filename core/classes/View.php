@@ -1,7 +1,7 @@
 <?php
 
-class View
-{
+class View{
+
     public $data;
 
     function render($name)

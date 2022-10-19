@@ -1,7 +1,7 @@
 <?php
 
-trait Controller
-{
+trait Controller{
+
     public $view;
     public $model;
 

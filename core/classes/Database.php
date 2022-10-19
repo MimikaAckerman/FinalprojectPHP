@@ -1,7 +1,7 @@
 <?php
 // Create connection
-class Database
-{
+class Database{
+
     private $host;
     private $db;
     private $user;
