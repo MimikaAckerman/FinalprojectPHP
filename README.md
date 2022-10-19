@@ -135,7 +135,7 @@ if (isset($_GET['controller'])) {
 
 > As you can see in the previous step, we had two default views, now we're gonna create them.
 
-### 3.1. `./views/main/main.php`
+### 3.1. `./views/main/login.php`
 
 This is the main view that is loaded only if the user doesn't specify any controller or it doesn't exists.
 
@@ -242,7 +242,7 @@ function error($errorMsg)
 
 In order to send queries to the database, we need to create the connection.
 
-#### 5.1.1. `./models/helper/dbConnection.php`
+#### 5.1.1. `./core/classes/Database.php`
 
 ```php
 <?php
@@ -274,7 +274,7 @@ function conn()
 First, we must require the previous database connection file in order to execute the database queries.
 
 ```php
-require_once("helper/dbConnection.php");
+require_once("classes/Database.php");
 ```
 
 In this model we will create the `get` function that we are executing in the `noteController.php`.
@@ -282,10 +282,9 @@ In this model we will create the `get` function that we are executing in the `no
 ```php
 function get()
 {
-    $query = conn()->prepare("SELECT e.id, e.name, e.email, g.name as 'gender', e.city, e.age, e.phone_number
-    FROM notes e
-    INNER JOIN genders g ON e.gender_id = g.id
-    ORDER BY e.id ASC;");
+    $query = conn()->prepare("SELECT e.id, e.title, e.content, e.initial_date, e.final_date
+        FROM notes e
+        ORDER BY e.id ASC;");
 
     try {
         $query->execute();
